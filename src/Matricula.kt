@@ -1,11 +1,14 @@
-import java.time.LocalDate
+import java.time.LocalDateTime
 import java.util.*
 
 open class Matricula(
 
-    var aluno: Aluno,
-    var curso: Curso,
+    open var aluno: Aluno,
+    open var curso: Curso,
+    open var data: LocalDateTime
 
 
-): DigitalHouseManager() {
+) : DigitalHouseManager() {
+
+
 }

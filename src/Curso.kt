@@ -2,17 +2,18 @@ open class Curso(
 
     var nomeCurso: String,
     var codigoCurso: Int,
-    var qtdadeMaxALunos: Int
+    open var qtdadeMaxALunos: Int,
+
 
 ) : DigitalHouseManager() {
-    fun addAluno(aluno: Aluno) {
-        if (qtdadeMaxALunos > listaAlunos.size) {
+
+    fun addAluno(aluno: Aluno): Boolean {
+
+        return if (qtdadeMaxALunos > listaAlunos.size) {
             listaAlunos.add(aluno)
-            println("Aluno adicionado com sucesso!")
-        } else {
-            println("Limite ultrapassado!!!")
-            println(listaAlunos.size)
-        }
+
+        } else
+            return false
     }
 
     fun excluirAluno(aluno: Aluno) {
@@ -21,7 +22,19 @@ open class Curso(
                 listaAlunos.remove(aluno)
                 println("Aluno removido com sucesso!")
                 break
+            }else{
+                println("Aluno não encontrato.")
             }
         }
+    }
+
+    override fun equals(other: Any?): Boolean {
+        var curso2 = other as? Curso
+        return if (other == codigoCurso){
+            this.codigoCurso == curso2?.codigoCurso
+        }else {
+            super.equals(other)
+        }
+
     }
 }

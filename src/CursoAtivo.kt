@@ -1,31 +1,15 @@
 fun main (){
 
-//    var aluno = Aluno("Samuel", "Santos", 1104)
-//    var proft = ProfessorTitular("Titular", "XXX", 123, 0, "Espec")
-//    var profa = ProfessorAdjunto("Adjunto", "YYY", 321, 0, 10)
-//    var teste = Curso(nomeCurso = "Teste", codigoCurso = 123123, qtdadeMaxALunos = 10, professorTitular = proft, professorAdjunto = profa)
-//    var matricula = Matricula(aluno, teste)
-//
-//    teste.addAluno(aluno)
-//    teste.excluirAluno(aluno)
-//    teste.registrarCurso(teste)
-//
-//
-//
-//    profa.registrarProfAdjunto(profa)
-//    proft.registrarProfTitular(proft)
-//
-//    profa.removerProfessor(profa)
-//
-//    teste.adicionarAluno(aluno)
-//
-//    teste.matricularAluno(aluno,teste)
+    var profT1 = ProfessorTitular("João", "Santos", 1100, 1,"Android")
+    var profT2 = ProfessorTitular("José", "Silva", 1101, 3,"Android e IOS")
+    var profA1 = ProfessorAdjunto("Maria", "Pereira", 1200, 5,15)
+    var profA2 = ProfessorAdjunto("Pedro", "Cunha", 1201,5,45)
 
-    var curso1 = Curso(nomeCurso = "Full Stack", codigoCurso = 20001, qtdadeMaxALunos = 3)
-    var curso2 = Curso(nomeCurso = "Android", codigoCurso = 20002, qtdadeMaxALunos = 2)
+    var curso1 = Curso("Full Stack", 20001,3)
+    var curso2 = Curso("Android", 20002,2)
 
-    var professorTitular = ProfessorTitular(nomeProfessor = "ProfT", sobrenomeProfessor = "tit", codigoProfessor = 1122, tempoDeCasa = 2, especialidade = "tudo")
-    var professorAdjunto = ProfessorAdjunto(nomeProfessor = "ProfA", sobrenomeProfessor = "Adj", codigoProfessor = 3366, tempoDeCasa = 2, qtdadeHorasMonitoria = 10)
+    curso1.alocarProfessor(20001,1200,1100)
+    curso1.alocarProfessor(2002,1201,1101)
 
     var aluno1 = Aluno(nomeAluno = "AAA", sobrenomeAluno = "BBB", codigoAluno = 1)
     var aluno2 = Aluno(nomeAluno = "CCC", sobrenomeAluno = "DDD", codigoAluno = 2)
@@ -36,11 +20,28 @@ fun main (){
     var aluno7 = Aluno(nomeAluno = "MMM", sobrenomeAluno = "NNN", codigoAluno = 7)
     var aluno8 = Aluno(nomeAluno = "OOO", sobrenomeAluno = "PPP", codigoAluno = 8)
 
-    curso1.matricularAluno(aluno1, curso1)
-    curso1.matricularAluno(aluno2, curso1)
-    curso2.matricularAluno(aluno3, curso2)
-    curso2.matricularAluno(aluno4, curso2)
-    curso2.matricularAluno(aluno5, curso2)
+
+    curso1.addAluno(aluno1)
+    curso1.addAluno(aluno2)
+
+    curso2.addAluno(aluno3)
+    curso2.addAluno(aluno4)
+    curso2.addAluno(aluno5)
+
+    curso1.registrarCurso(curso1)
+    curso2.registrarCurso(curso2)
+
+    curso1.matricularAluno(aluno1,curso1)
+    curso1.matricularAluno(aluno2,curso1)
+
+    curso2.matricularAluno(aluno3,curso2)
+    curso2.matricularAluno(aluno4,curso2)
+    curso2.matricularAluno(aluno5,curso2)
+
+
+
+
+
 
 
 }

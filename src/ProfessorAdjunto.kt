@@ -6,6 +6,15 @@ open class ProfessorAdjunto(
     var qtdadeHorasMonitoria: Int
 ) : Professor, DigitalHouseManager(){
 
+    override fun equals(other: Any?): Boolean {
+        var profA1 = other as? ProfessorAdjunto
+        return if (other == codigoProfessor){
+            this.codigoProfessor == profA1?.codigoProfessor
+        }else{
+            super.equals(other)
+        }
+    }
+
 }
 
 
